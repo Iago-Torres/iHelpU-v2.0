@@ -7,7 +7,7 @@ using iHelpU.MODEL.Models;
 
 namespace iHelpU.MODEL.ViewModel
 {
-    public class HomePageViewModel
+    public class HomePageVM
     {
         public string MensagemBemVindo { get; set; }
         public IEnumerable<AnuncioServico> Anuncios { get; set; }

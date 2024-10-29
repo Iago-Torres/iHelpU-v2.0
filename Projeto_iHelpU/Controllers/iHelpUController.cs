@@ -18,10 +18,10 @@ namespace Projeto_iHelpU.Controllers
         public async Task<IActionResult> HomePage()
         {
             var anuncios = await _serviceAnuncio.GetAllAsync();
-            var viewModel = new HomePageViewModel
+            var viewModel = new HomePageVM
             {
                 MensagemBemVindo = "Bem-vindo ao iHelpU!",
-                Anuncios = await _serviceAnuncio.oRepositoryAnuncioServico.GetAllAsync()
+                Anuncios = await _serviceAnuncio.oRepositoryAnuncioServico.SelecionarTodosAsync()
             };
             return View(viewModel);
         }

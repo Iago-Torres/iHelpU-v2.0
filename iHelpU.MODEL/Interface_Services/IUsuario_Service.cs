@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using iHelpU.MODEL.Repositories;
 
 namespace iHelpU.MODEL.Interface_Services
 {
@@ -14,6 +15,7 @@ namespace iHelpU.MODEL.Interface_Services
         Task<Usuario> CreateAsync(Usuario usuario);
         Task UpdateAsync(Usuario usuario);
         Task DeleteAsync(int id);
+        Task <Usuario> ObterUsuarioporCredencial(string email, string cpf);
     }
 
 }

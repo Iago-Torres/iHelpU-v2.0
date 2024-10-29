@@ -49,6 +49,12 @@ namespace iHelpU.MODEL.Services
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<Usuario> ObterUsuarioporCredencial(string email, string cpf)
+        {
+            return await _context.Usuarios
+                                 .FirstOrDefaultAsync(u => u.Email == email && u.Cpf == cpf); //ALTERAR PARA SENHA ASSIM QUE POSSÍVEL
+        }
     }
 
 }

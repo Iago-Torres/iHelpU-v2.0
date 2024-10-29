@@ -153,5 +153,10 @@ namespace Projeto_iHelpU.Controllers
             ViewBag.Usuarios = usuarios;
             return View("Perfil", usuario);
         }
+        public async Task<Usuario> ValidarCredenciaisAsync(string email, string senha)
+        {
+            return await _serviceUsuario.oRepositoryUsuario._context.Usuarios
+                .FirstOrDefaultAsync(u => u.Email == email && u.Cpf == senha);
+        }
     }
 }
