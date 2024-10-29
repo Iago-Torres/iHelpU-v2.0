@@ -1,16 +1,17 @@
-﻿using iHelpU.MODEL.Models;
-using iHelpU.MODEL.Services;
-using Microsoft.AspNetCore.Mvc;
-using Projeto_iHelpU.Models; // Certifique-se de ajustar o namespace
-using System.Threading.Tasks;
+﻿using iHelpU.MODEL.Interface_Services; // Use a interface
+using iHelpU.MODEL.Models;
 using iHelpU.MODEL.ViewModel;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+
 namespace Projeto_iHelpU.Controllers
 {
     public class iHelpUController : Controller
     {
-        private readonly AnuncioServico_Service _serviceAnuncio;
+        private readonly IAnuncioServico_Service _serviceAnuncio;
 
-        public iHelpUController(AnuncioServico_Service serviceAnuncio)
+        // Use a interface em vez da implementação
+        public iHelpUController(IAnuncioServico_Service serviceAnuncio)
         {
             _serviceAnuncio = serviceAnuncio;
         }
@@ -21,7 +22,7 @@ namespace Projeto_iHelpU.Controllers
             var viewModel = new HomePageVM
             {
                 MensagemBemVindo = "Bem-vindo ao iHelpU!",
-                Anuncios = await _serviceAnuncio.oRepositoryAnuncioServico.SelecionarTodosAsync()
+                Anuncios = anuncios // Use diretamente a lista de anúncios
             };
             return View(viewModel);
         }

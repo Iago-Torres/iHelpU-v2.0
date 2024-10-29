@@ -16,6 +16,6 @@ namespace iHelpU.MODEL.ViewModel
 
         [Required(ErrorMessage = "O campo Senha é obrigatório.")]
         [DataType(DataType.Password)]
-        public string Senha { get; set; }
+        public string Cpf { get; set; }
     }
 }

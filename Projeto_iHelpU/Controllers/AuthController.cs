@@ -23,7 +23,7 @@ namespace Projeto_iHelpU.Controllers
         {
             if (ModelState.IsValid)
             {
-                var usuario = await _usuarioService.ObterUsuarioporCredencial(model.Email, model.Senha);
+                var usuario = await _usuarioService.ObterUsuarioporCredencial(model.Email, model.Cpf);
 
                 if (usuario != null)
                 {
