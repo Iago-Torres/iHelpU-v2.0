@@ -6,8 +6,8 @@ namespace Projeto_iHelpU.Controllers
 {
  public class AnuncioController : Controller
  {
-        private readonly BancoTccContext _context;       
-        public AnuncioController(BancoTccContext context)
+        private readonly BancoTCCContext _context;       
+        public AnuncioController(BancoTCCContext context)
         {
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace Projeto_iHelpU.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(AnuncioServico anuncio)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             if (ModelState.IsValid)
             {
                 db.Entry(anuncio).State = Microsoft.EntityFrameworkCore.EntityState.Added;
@@ -46,14 +46,14 @@ namespace Projeto_iHelpU.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             var anuncio = await db.TipoServicos.FindAsync(id);
             return View(anuncio);
         }
         [HttpPost]
         public async Task<IActionResult> Edit(AnuncioServico competencia)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             if (ModelState.IsValid)
             {
                 db.Entry(competencia).State = EntityState.Modified;
@@ -68,14 +68,14 @@ namespace Projeto_iHelpU.Controllers
         }
         public async Task<IActionResult> Details(int id)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             var anuncio = await db.TipoServicos.FirstOrDefaultAsync(x => x.Id == id);
             return View(anuncio);
         }
 
         public async Task<IActionResult> Delete(int id)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             var anuncio = await db.TipoServicos.FirstOrDefaultAsync(x => x.Id == id);
             return View(anuncio);
         }
@@ -83,7 +83,7 @@ namespace Projeto_iHelpU.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(AnuncioServico anuncio)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             if (ModelState.IsValid)
             {
                 db.Entry(anuncio).State = EntityState.Deleted;

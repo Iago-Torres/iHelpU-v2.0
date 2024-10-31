@@ -9,12 +9,12 @@ namespace Projeto_iHelpU.Controllers
 {
     public class TipoServicoController : Controller
     {
-        private BancoTccContext _context;
+        private BancoTCCContext _context;
         private TipoServicoService _serviceTipoServico;
         private RepositoryTipoServico oRepositoryTipoServico;
 
         // Injeção de dependência do contexto e do service
-        public TipoServicoController(BancoTccContext context)
+        public TipoServicoController(BancoTCCContext context)
         {
             _context = context;
             _serviceTipoServico = new TipoServicoService(context);  

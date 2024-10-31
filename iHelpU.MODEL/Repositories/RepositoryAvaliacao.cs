@@ -10,7 +10,7 @@ namespace iHelpU.MODEL.Repositories
 {
     public class RepositoryAvaliacao : RepositoryBase<Avaliacao>
     {
-        public RepositoryAvaliacao(BancoTccContext context, bool saveChanges = true) : base(context, saveChanges)
+        public RepositoryAvaliacao(BancoTCCContext context, bool saveChanges = true) : base(context, saveChanges)
         {
         }
     }

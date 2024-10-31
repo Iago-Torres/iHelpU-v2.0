@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'Identity_ContextConnection' not found.");
-builder.Services.AddDbContext<BancoTccContext>(options =>
+builder.Services.AddDbContext<BancoTCCContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); // Ajuste a string de conexão conforme necessário
 
 // Registrar os serviços no contêiner de dependência
@@ -54,7 +54,7 @@ app.MapControllers();
 
 app.Run();
 // Add services to the container.
-builder.Services.AddDbContext<BancoTccContext>(opt => opt.UseSqlServer(connectionString));
+builder.Services.AddDbContext<BancoTCCContext>(opt => opt.UseSqlServer(connectionString));
 //builder.Services.AddDbContext<Identity_Context>(opt => opt.UseSqlServer(connectionString));
 
 // Add services to the container.

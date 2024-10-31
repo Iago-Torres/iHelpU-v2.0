@@ -12,10 +12,10 @@ namespace iHelpU.MODEL.Services
 {
     public class CompetenciaService : ICompetenciaService
     {
-        private readonly BancoTccContext _context;
+        private readonly BancoTCCContext _context;
         public RepositoryCompetencia oRepositoryCompetencia { get; set; }
 
-        public CompetenciaService(BancoTccContext context)
+        public CompetenciaService(BancoTCCContext context)
         {
             oRepositoryCompetencia = new RepositoryCompetencia(context);
             _context = context;

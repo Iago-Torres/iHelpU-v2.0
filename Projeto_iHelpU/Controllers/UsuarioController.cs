@@ -13,7 +13,7 @@ namespace Projeto_iHelpU.Controllers
         private readonly UsuarioService _serviceUsuario;
         private readonly UsuarioController _context;
 
-        public UsuarioController(BancoTccContext context)
+        public UsuarioController(BancoTCCContext context)
         {
             _serviceUsuario = new UsuarioService(context); 
             

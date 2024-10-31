@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<BancoTccContext>(opt => opt.UseSqlServer("Server=.\\SQLExpress;Database=Banco_TCC;Trusted_Connection=True;trustservercertificate=true"));
+builder.Services.AddDbContext<BancoTCCContext>(opt => opt.UseSqlServer("Server=.\\SQLExpress;Database=Banco_TCC;Trusted_Connection=True;trustservercertificate=true"));
 builder.Services.AddScoped<IUsuario_Service, UsuarioService>();
 builder.Services.AddScoped<IRepositoryBase<AnuncioServico>, RepositoryAnuncioServico>();
 builder.Services.AddScoped<IAnuncioServico_Service, AnuncioServico_Service>();

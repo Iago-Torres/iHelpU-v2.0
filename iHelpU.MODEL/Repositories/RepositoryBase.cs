@@ -12,10 +12,10 @@ namespace iHelpU.MODEL.Repositories
 {
     public class RepositoryBase<T> : IRepositoryBase<T>, IDisposable where T : class
     {
-        public BancoTccContext _context;
+        public BancoTCCContext _context;
         public bool _saveChanges = true;
 
-        public RepositoryBase(BancoTccContext context, bool saveChanges)
+        public RepositoryBase(BancoTCCContext context, bool saveChanges)
         {
             _context = context;
             _saveChanges = saveChanges;

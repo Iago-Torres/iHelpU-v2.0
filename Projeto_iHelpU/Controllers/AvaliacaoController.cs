@@ -8,7 +8,7 @@ namespace Projeto_iHelpU.Controllers
     {
         public async Task<IActionResult> Index()
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             var listaAvaliacao = await db.Avaliacaos.ToListAsync();
             return View(listaAvaliacao);
         }
@@ -19,7 +19,7 @@ namespace Projeto_iHelpU.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Avaliacao avaliacao)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             if (ModelState.IsValid)
             {
                 db.Entry(avaliacao).State = Microsoft.EntityFrameworkCore.EntityState.Added;
@@ -35,14 +35,14 @@ namespace Projeto_iHelpU.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             var avaliacao = await db.TipoServicos.FindAsync(id);
             return View(avaliacao);
         }
         [HttpPost]
         public async Task<IActionResult> Edit(Avaliacao avaliacao)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             if (ModelState.IsValid)
             {
                 db.Entry(avaliacao).State = EntityState.Modified;
@@ -57,14 +57,14 @@ namespace Projeto_iHelpU.Controllers
         }
         public async Task<IActionResult> Details(int id)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             var avaliacao = await db.TipoServicos.FirstOrDefaultAsync(x => x.Id == id);
             return View(avaliacao);
         }
 
         public async Task<IActionResult> Delete(int id)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             var avaliacao = await db.TipoServicos.FirstOrDefaultAsync(x => x.Id == id);
             return View(avaliacao);
         }
@@ -72,7 +72,7 @@ namespace Projeto_iHelpU.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(Avaliacao avaliacao)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             if (ModelState.IsValid)
             {
                 db.Entry(avaliacao).State = EntityState.Deleted;

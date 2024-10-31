@@ -12,10 +12,10 @@ namespace iHelpU.MODEL.Services
 {
     public class UsuarioService : IUsuario_Service
     {
-        private readonly BancoTccContext _context;
+        private readonly BancoTCCContext _context;
         public RepositoryUsuario oRepositoryUsuario { get; set; }
 
-        public UsuarioService(BancoTccContext context)
+        public UsuarioService(BancoTCCContext context)
         {
             oRepositoryUsuario = new RepositoryUsuario(context);
            _context = context;

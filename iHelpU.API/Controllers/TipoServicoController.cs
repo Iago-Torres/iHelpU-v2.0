@@ -10,11 +10,11 @@ namespace iHelpU.API.Controllers
     [ApiController]
     public class TipoServicoController : ControllerBase
     {
-        private BancoTccContext _context;
+        private BancoTCCContext _context;
         private TipoServicoService _service;
 
         // Construtor com injeção de dependência
-        public TipoServicoController(BancoTccContext context)
+        public TipoServicoController(BancoTCCContext context)
         {
             _context = context;
             _service = new TipoServicoService(_context);

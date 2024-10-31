@@ -8,7 +8,7 @@ namespace Projeto_iHelpU.Controllers
     {
         public async Task<IActionResult> Index()
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             var listaCompetencia = await db.Competencias.ToListAsync();
             return View(listaCompetencia);
         }
@@ -19,7 +19,7 @@ namespace Projeto_iHelpU.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Competencia competencia)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             if (ModelState.IsValid)
             {
                 db.Entry(competencia).State = Microsoft.EntityFrameworkCore.EntityState.Added;
@@ -35,14 +35,14 @@ namespace Projeto_iHelpU.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             var competencia = await db.TipoServicos.FindAsync(id);
             return View(competencia);
         }
         [HttpPost]
         public async Task<IActionResult> Edit(Competencia competencia)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             if (ModelState.IsValid)
             {
                 db.Entry(competencia).State = EntityState.Modified;
@@ -57,14 +57,14 @@ namespace Projeto_iHelpU.Controllers
         }
         public async Task<IActionResult> Details(int id)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             var competencia = await db.TipoServicos.FirstOrDefaultAsync(x => x.Id == id);
             return View(competencia);
         }
 
         public async Task<IActionResult> Delete(int id)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             var competencia = await db.TipoServicos.FirstOrDefaultAsync(x => x.Id == id);
             return View(competencia);
         }
@@ -72,7 +72,7 @@ namespace Projeto_iHelpU.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(Competencia competencia)
         {
-            var db = new BancoTccContext();
+            var db = new BancoTCCContext();
             if (ModelState.IsValid)
             {
                 db.Entry(competencia).State = EntityState.Deleted;
